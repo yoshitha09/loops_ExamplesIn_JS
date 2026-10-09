@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops Example</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 2%;
+            font-size: 26px;
+        }
+
+        button {
+            width: 70%;
+            height: 45px;
+            font-size: 20px;
+            color: aliceblue;
+            background-color: rgb(66, 66, 187);
+        }
+
+        h1 {
+            font-size: 50px;
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        input {
+            width: 50%;
+            height: 30px;
+            padding-left: 2%;
+            font-size: 20px;
+        }
+
+        .cards1 {
+            margin-bottom: 2%;
+        }
+
+        .cards2 {
+            width: 90%;
+            height: 90%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1%;
+            margin-left: 5%;
+            flex-wrap: wrap;
+            background-color: azure;
+
+        }
+
+        .cards3 {
+            padding: 2%;
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            height: 50%;
+            gap: 5%;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 45%;
+            height: 50%;
+            border: solid rgb(211, 231, 255);
+            border-radius: 15px;
+            background-color: white;
+            padding-bottom: 2%;
+            margin-bottom: 2%;
+        }
+          
+    </style>
+</head>
+
+<body>
+    <div class="cards1">
+        <h1>Loops</h1>
+    </div>
+    <div class="cards2">
+        <h2>For Loop</h2>
+        <div class="cards3">
+            <div class="card"><br>
+                <h3>Average of n numbers</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num1"><br><br>
+                <button onclick="average()">Calculate</button><br><br>
+                <div id="avg1"></div>
+
+            </div>
+            <div class="card"><br>
+                <h3>Sum of squares from 1 to n</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num2"><br><br>
+                <button onclick="squares()">Calculate</button><br><br>
+                <div id="squ"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Sum of cubs from 1 to n</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num3"><br><br>
+                <button onclick="cub()">Calculate</button><br><br>
+                <div id="cu"></div>
+            </div>
+            <div class="card"><br>
+                <h3>fibonacci series</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num4"><br><br>
+                <button onclick="fibonacci()">Calculate</button><br><br>
+                <div id="series"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cards2">
+        <h2>while loop</h2>
+        <div class="cards3">
+            <div class="card"><br>
+                <h3>Sum of digits in a num</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num5"><br><br>
+                <button onclick="sumofdigits()">Calculate</button><br><br>
+                <div id="digitSum"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Average of digits in a num</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num6"><br><br>
+                <button onclick="Averageofdigits()">Calculate</button><br><br>
+                <div id="avgdigit"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Sum of 1st and last digit of a num</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num7"><br><br>
+                <button onclick="sumoffirstandlastdigits()">Calculate</button><br><br>
+                <div id="sum2"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Average of digits which are divisible by 5 in given num</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num8"><br><br>
+                <button onclick="averagedigits()">Calculate</button><br><br>
+                <div id="avg4"></div>
+            </div>
+            <div class="card"><br>
+                <h3>difference between largest and smallest digit</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num9"><br><br>
+                <button onclick="diff()">Calculate</button><br><br>
+                <div id="dif"></div>
+            </div>
+            <div class="card">
+                <h3>palindrome</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num10"><br><br>
+                <button onclick="palindrome()">Calculate</button><br><br>
+                <div id="palin"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cards2">
+        <h2>Nested Loops</h2>
+        <div class="cards3">
+            <div class="card"><br>
+                <h3>Sum of prime number</h3><br>
+                <label>Enter number1 : </label>
+                <input type="text" placeholder="EX:40" id="num11"><br><br>
+                <label>Enter number2 : </label>
+                <input type="text" placeholder="EX:40" id="num12"><br><br>
+                <button onclick="sumOfPrimes()">Calculate</button><br><br>
+                <div id="sum4"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Average of perfect num n1 to n2</h3><br>
+                <label>Enter number1 : </label>
+                <input type="text" placeholder="EX:40" id="num13"><br><br>
+                <label>Enter number2 : </label>
+                <input type="text" placeholder="EX:40" id="num14"><br><br>
+                <button onclick="averageofperfect()">Calculate</button><br><br>
+                <div id="avg5"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Leap year in range year1 to year2</h3><br>
+                <label>Enter 1st year : </label>
+                <input type="text" placeholder="EX:2022" id="year1"><br><br>
+                <label>Enter last year : </label>
+                <input type="text" placeholder="EX:2026" id="year2"><br><br>
+                <button onclick="leapyear()">Calculate</button><br><br>
+                <div id="leap"></div>
+            </div>
+            <div class="card"><br>
+                <h3>Palindrome numbers from n1 to n2</h3><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num15"><br><br>
+                <label>Enter number : </label>
+                <input type="text" placeholder="EX:40" id="num16"><br><br>
+                <button onclick="palindromenum()">Calculate</button><br><br>
+                <div id="num"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="loop.js"></script>
+</body>
+
+</html>
