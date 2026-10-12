@@ -39,18 +39,20 @@
  }
 
 //fibonacci series
- function fibonacci(){
+ function fibona(){
      let y=parseInt(document.getElementById("num4").value);
      let a=0;
      let b=1;
      let c;
-     for (let i=1;i<=n;i++)
+     let result="";
+     for (let i=1;i<=y;i++)
      {
-         document.getElementById("series").innerHTML="fibonacci series : "+a;
+        result=result+a+",";
          c=a+b;
          a=b;
          b=c;
      }
+     document.getElementById("seri").innerHTML="fibonacci series : "+result;
  }
 
 //while loop
@@ -59,11 +61,11 @@
  function sumofdigits(){
      let z=parseInt(document.getElementById("num5").value);
      let sum=0;
-   while(n>0)
+   while(z>0)
    {
-     let d=parseInt(n%10);
+     let d=z%10;
      sum=sum+d;
-     n=parseInt(n/10);
+     z=parseInt(z/10);
     }
     document.getElementById("digitSum").innerHTML="sum of digits : "+sum;
  }
@@ -77,13 +79,20 @@
      let count=0;
      while(d>0)
      {
-         div=parseInt(d%10);
+         div=d%10;
          sum=sum+div;
          d=parseInt(d/10);
          count++;
      }
-     avg=sum/count;
-     document.getElementById("avgdigit").innerHTML="Average of digits in a number : "+avg;    
+      if(count>0)
+     {
+          avg=sum/count;
+          document.getElementById("avgdigit").innerHTML="average of digits : "+avg;
+     }
+     else{
+        document.getElementById("avgdigit").innerHTML="No digits divisible by 5 "
+     }
+   
  }
 
 //sum of 1st and last digit of a num
@@ -110,46 +119,48 @@
  function averagedigits(){
      let f=parseInt(document.getElementById("num8").value);
      let sum=0;
-     let div;
      let count=0;
      let avg;
-     while(n>0)
+     while(f>0)
      {
-         div=parseInt(n%10);
+         let div=f%10;
          if(div%5===0)
          {
              sum=sum+div;
              count++
          }
-         n=parseInt(n/10);
+         f=parseInt(f/10);
      }
-     avg=parseInt(sum/count);
-     document.getElementById("avg4").innerHTML="average of digits which are divisible by 5 : "+avg;
+     if(count>0)
+     {
+          avg=sum/count;
+          document.getElementById("avg4").innerHTML="average of digits which are divisible by 5 : "+avg;
+     }
+     else{
+        document.getElementById("avg4").innerHTML="No digits divisible by 5 "
+     }
+    
  } 
 
 //find the difference between largest and smallest digit in given num
  function diff(){
      let g=parseInt(document.getElementById("num9").value);
-     let d;
-     let temp;
-     let large=1;
-     let small=10;
-     let dif;
-     while(n>0)
+     let large=0;
+     let small=9;
+     while(g>0)
      {
-         d=parseInt(n%10);
-         temp=d;
-         if(large<temp)
+          let d=g%10;
+         if(d>large)
          {
-             large=temp;
+             large=d;
          }
-         if(small>temp)
+         if(d<small)
          {
-             small=temp;
+             small=d;
          }
-         n=parseInt(n/10);
+         g=parseInt(g/10);
      }
-     dif=large-small;
+     let dif=large-small;
      document.getElementById("dif").innerHTML="difference between largest and smallest digit : "+dif;
 
     }
@@ -225,8 +236,14 @@
                  count++
              }
      }
-      avg=sum/count;
+     if(count>0)
+     {
+         avg=sum/count;
      document.getElementById("avg5").innerHTML="average of perfect num1 to num2 : "+avg;    
+     }
+     else{
+      document.getElementById("avg5").innerHTML="There are no perfect numbers b/w "+m1+" to "+m2;    
+     }
  }
 
 //leap year in range 1900 to 2026
@@ -234,13 +251,15 @@
  {
      let x1=parseInt(document.getElementById("year1").value);
      let x2=parseInt(document.getElementById("year2").value);
+     let result="";
      for(let i=x1;i<=x2;i++)
      {
         if(i%4===0)
         {
-          document.getElementById("leap").innerHTML="leap year in range "+ x1+" to "+x2+" : "+i;        
+            result=result+i+",";
         }
      }
+      document.getElementById("leap").innerHTML="leap year in range "+ x1+" to "+x2+" : "+result;        
  }
 
 //palindrome num
@@ -250,22 +269,24 @@
      let y2=parseInt(document.getElementById("num16").value);
      let temp;
      let d;
+     let result="";
      for(let i=y1;i<=y2;i++)
      {
         let sum=0;
         temp=i;
         while(temp>0)
         {
-          d=parseInt(temp%10);
+          d=temp%10;
           sum=sum*10+d;
           temp=parseInt(temp/10);
         }
         if(sum===i)
         {
-         document.getElementById("num").innerHTML="palindrome numbers from"+y1+"to"+y2+" : "+i;       
+             result=result+i+",";
         }
        
      }
+     document.getElementById("num").innerHTML="palindrome numbers from"+y1+"to"+y2+" : "+result;       
  }
 
 
